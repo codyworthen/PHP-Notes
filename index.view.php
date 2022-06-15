@@ -25,11 +25,28 @@
 
 <body>
 
-<header>
-    <h1>
-        <?= $greeting; ?>
-    </h1>
-</header>
+    <header>
+        <h1>
+            <?php
+                echo $greeting;
+                ?>
+        </h1>
+    </header>
+
+    <ul>
+        <?php
+            foreach($names as $name) {
+                echo "<li>$name</li>";
+            }
+        ?>
+
+        <br>
+
+        <!-- shorthand foreach -->
+        <?php foreach($names as $name) : ?>
+            <li><?= $name; ?></li>
+        <?php endforeach; ?>
+    </ul>
 
 </body>
 
