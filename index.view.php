@@ -15,45 +15,92 @@
             text-align: center;
         }
 
-        body {
-            text-align: center;
-        }
-
     </style>
 
 </head>
 
 <body>
 
-    <header>
-        <h1>
-            <?php
-                echo $greeting;
-                ?>
-        </h1>
-    </header>
+<header>
+    <h1>
+		<?php
+		echo $greeting;
+		?>
+    </h1>
+</header>
 
-    <ul>
-        <?php
-            foreach($names as $name) {
-                echo "<li>$name</li>";
-            }
-        ?>
+<ul>
+	<?php
+	foreach ($names as $name) {
+		echo "<li>$name</li>";
+	}
+	?>
+</ul>
 
-        <br>
+<ul>
+    <!-- shorthand foreach -->
+	<?php
+	foreach ($names as $name) : ?>
+        <li><?= $name; ?></li>
+	<?php
+	endforeach; ?>
+</ul>
 
-        <!-- shorthand foreach -->
-        <?php foreach($names as $name) : ?>
-            <li><?= $name; ?></li>
-        <?php endforeach; ?>
+<ul>
+	<?php
+	
+	foreach ($person as $key => $feature) : ?>
+        <li><strong><?= ucwords($key) . ': '; ?></strong> <?= ucwords($feature); ?> </li>
+	<?php
+	endforeach; ?>
 
-        <br>
+</ul>
 
-        <?php
-            foreach($person as $key => $feature) : ?>
-                <li><strong><?= $key . ': '; ?></strong> <?= $feature; ?> </li>
-            <?php endforeach; ?>
-    </ul>
+<ul>
+    <li>
+        <strong>Name:</strong>
+		<?= $task['name']; ?>
+    </li>
+
+    <li>
+        <strong>Due:</strong>
+		<?php
+		$format = $task['due']->format('M-d-Y');
+		echo $format;
+		?>
+    </li>
+
+    <li>
+        <strong>Assigned To:</strong>
+		<?php
+		echo $task['assignedTo'];
+		?>
+    </li>
+
+    <li>
+        <strong>Completed:</strong>
+		<?php
+		
+		if ($task['completed']) {
+			echo '&#9989';
+		} else {
+			echo '&#x274C';
+		}
+		
+		?>
+    </li>
+
+    <li>
+        <strong>Impossible:</strong>
+		<?php
+		
+		if (!$task['impossilble']) {
+			echo "&#x274C";
+		}
+		
+		?>
+    </li>
+</ul>
 
 </body>
 
