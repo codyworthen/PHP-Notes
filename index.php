@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $greeting = "Hello World";
 
 // normal array
@@ -16,7 +18,7 @@ $person = [
 	'alive' => true,
 	'age' => 23,
 	'hair' => 'brown',
-	'position' => 'freelance hamster trainer'
+	'position' => 'Master of Coin'
 ];
 
 $person['name'] = 'Cody'; // adds a new key-value pair to the array
@@ -33,9 +35,4 @@ $task = [
 
 require 'index.view.php'; // pulls in everything from this path
 
-echo '<pre>'; // preserves the formatting of php
-var_dump($person); // dumps values for everything (echo only works for strings)
-echo '</pre>';
-
-die('php has died'); // prints a msg and exits the current script
-
+dd($person);
