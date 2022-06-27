@@ -24,7 +24,7 @@
 <header>
     <h1>
 		<?php
-		echo $greeting;
+		echo $header;
 		?>
     </h1>
 </header>
@@ -80,24 +80,14 @@
     <li>
         <strong>Completed:</strong>
 		<?php
-		
-		if ($task['completed']) {
-			echo '&#9989';
-		} else {
-			echo '&#x274C';
-		}
-		
+		echo isCompleted($task['completed']);
 		?>
     </li>
 
     <li>
         <strong>Impossible:</strong>
 		<?php
-		
-		if (!$task['impossilble']) {
-			echo "&#x274C";
-		}
-		
+		echo isCompleted($task['impossible']);
 		?>
     </li>
 </ul>

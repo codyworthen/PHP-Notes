@@ -2,7 +2,7 @@
 
 require 'functions.php';
 
-$greeting = "Hello World";
+$header = "Arrays & Associate Arrays";
 
 // normal array
 $names = [
@@ -30,7 +30,7 @@ $task = [
 	'due' => new DateTime("07-01-2022"),
 	'assignedTo' => 'Cody Worthen',
 	'completed' => true,
-	'impossilble' => false
+	'impossible' => false
 ];
 
 require 'index.view.php'; // pulls in everything from this path
