@@ -1,7 +1,8 @@
 <?php
+
 require('partials/head.php'); ?>
 
-    <h1>My Tasks</h1>
+<h1>My Tasks</h1>
 
 <?php
 foreach ($tasks as $task) : ?>
@@ -18,5 +19,4 @@ foreach ($tasks as $task) : ?>
 <?php
 endforeach; ?>
 
-<?php
 require('partials/footer.php'); ?>
