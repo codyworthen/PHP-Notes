@@ -1,7 +1,6 @@
 <?php
 
 class Connection {
-	
 	public static function make($config) {
 		try {
 			return new PDO(
@@ -14,5 +13,4 @@ class Connection {
 			die($e->getMessage());
 		}
 	}
-	
 }

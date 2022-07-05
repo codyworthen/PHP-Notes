@@ -19,4 +19,5 @@ foreach ($tasks as $task) : ?>
 <?php
 endforeach; ?>
 
+<?php
 require('partials/footer.php'); ?>

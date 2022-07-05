@@ -6,3 +6,4 @@ $router->define([
 					'about/culture' => 'controllers/about-culture.php',
 					'contact' => 'controllers/contact.php'
 				]);
+ 
